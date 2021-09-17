@@ -11,7 +11,11 @@ import {
     Tooltip,
 } from "@chakra-ui/react";
 import RadioGroup from "components/RadioGroup/RadioGroup";
+import { FaWeight } from "react-icons/fa";
+
 const Weight = () => {
+    const options = ["kg", "lb"];
+
     const [maxWeight] = useState({
         kg: 200,
         lb: 441,
@@ -38,7 +42,9 @@ const Weight = () => {
     return (
         <FormControl>
             <Box display="flex" alignItems="center" mb={4}>
-                <Text fontSize="xl">Your Weight</Text>
+                <Text fontSize="xl" display="flex" alignItems="center">
+                    <Box as={FaWeight} mr={2} /> Your Weight
+                </Text>
 
                 <Input
                     ml="auto"
@@ -57,8 +63,9 @@ const Weight = () => {
 
                 <Box>
                     <RadioGroup
-                        changeWeightType={changeWeightType}
-                        weightType={weightType}
+                        changeOptionType={changeWeightType}
+                        defaultValue={weightType}
+                        options={options}
                     />
                 </Box>
             </Box>

@@ -1,26 +1,38 @@
 import { HStack, useRadioGroup } from "@chakra-ui/react";
 import CustomRadioButton from "components/CustomRadioButton/CustomRadioButton";
+import CustomRadioButtonWTooltip from "components/CustomRadioButton/CustomRadioButtonWTooltip";
 
-const RadioGroup = ({ changeWeightType, weightType }) => {
-    const options = ["kg", "lb"];
-
+const RadioGroup = ({ changeOptionType, defaultValue, options, toolTips }) => {
     const { getRootProps, getRadioProps } = useRadioGroup({
         name: "weight",
-        defaultValue: weightType,
-        onChange: changeWeightType,
+        defaultValue: defaultValue,
+        onChange: changeOptionType,
     });
 
     const group = getRootProps();
 
     return (
         <HStack spacing="0" {...group}>
-            {options.map(value => {
+            {options.map((value, index) => {
                 const radio = getRadioProps({ value });
-                return (
-                    <CustomRadioButton key={value} {...radio}>
-                        {value}
-                    </CustomRadioButton>
-                );
+
+                if (toolTips) {
+                    return (
+                        <CustomRadioButtonWTooltip
+                            key={value}
+                            {...radio}
+                            tooltip={toolTips[index]}
+                        >
+                            {value}
+                        </CustomRadioButtonWTooltip>
+                    );
+                } else {
+                    return (
+                        <CustomRadioButton key={value} {...radio}>
+                            {value}
+                        </CustomRadioButton>
+                    );
+                }
             })}
         </HStack>
     );

@@ -1,4 +1,5 @@
 import { Box, Divider } from "@chakra-ui/react";
+import Strength from "components/Strength/Strength";
 import Weight from "components/weight/Weight";
 
 const Calculator = () => {
@@ -21,7 +22,9 @@ const Calculator = () => {
         >
             <form>
                 <Weight />
-                <Divider />
+                <Divider borderColor="GrayText" py={2} />
+                <Strength />
+                <Divider borderColor="GrayText" py={2} />
             </form>
         </Box>
     );
