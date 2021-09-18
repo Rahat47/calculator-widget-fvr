@@ -1,5 +1,7 @@
 import { Box, Divider } from "@chakra-ui/react";
 import Strength from "components/Strength/Strength";
+import TotalCBD from "components/TotalCBD/TotalCBD";
+import Volume from "components/Volume/Volume";
 import Weight from "components/weight/Weight";
 
 const Calculator = () => {
@@ -25,6 +27,9 @@ const Calculator = () => {
                 <Divider borderColor="GrayText" py={2} />
                 <Strength />
                 <Divider borderColor="GrayText" py={2} />
+                <TotalCBD />
+                <Divider borderColor="GrayText" py={2} />
+                <Volume />
             </form>
         </Box>
     );
