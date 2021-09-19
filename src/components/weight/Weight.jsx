@@ -13,15 +13,13 @@ import {
 import RadioGroup from "components/RadioGroup/RadioGroup";
 import { FaWeight } from "react-icons/fa";
 
-const Weight = () => {
+const Weight = ({ weight, setWeight }) => {
     const options = ["kg", "lb"];
 
     const [maxWeight] = useState({
         kg: 200,
         lb: 441,
     });
-
-    const [weight, setWeight] = useState(50);
     const [weightType, setWeightType] = useState("kg");
 
     const calculateWeight = (type, weight) => {
@@ -59,6 +57,7 @@ const Weight = () => {
                         setWeight(e.target.value);
                     }}
                     textAlign="right"
+                    isRequired
                 />
 
                 <Box>

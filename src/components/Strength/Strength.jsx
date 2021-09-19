@@ -1,10 +1,9 @@
-import { useState } from "react";
 import { FormControl, Box, Text } from "@chakra-ui/react";
 import { HiStatusOnline } from "react-icons/hi";
 import RadioGroup from "components/RadioGroup/RadioGroup";
 
-const Strength = () => {
-    const [desiredStrength, setDesiredStrength] = useState("Mild");
+const Strength = ({ desiredStrength, setDesiredStrength }) => {
+    // const [desiredStrength, setDesiredStrength] = useState("Mild");
 
     const changeDesiredStrength = value => {
         setDesiredStrength(value);

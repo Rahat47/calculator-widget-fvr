@@ -10,7 +10,7 @@ import {
 import { GiChemicalDrop } from "react-icons/gi";
 import { FiHelpCircle } from "react-icons/fi";
 
-const TotalCBD = () => {
+const TotalCBD = ({ totalCBD, setTotalCBD }) => {
     return (
         <FormControl>
             <Box display="flex" alignItems="center" mt={4}>
@@ -40,6 +40,9 @@ const TotalCBD = () => {
                             textAlign="right"
                             type="number"
                             placeholder="Basic usage"
+                            name="totalCBD"
+                            value={totalCBD}
+                            onChange={e => setTotalCBD(e.target.value)}
                         />
                         <InputRightAddon children="mg" />
                     </InputGroup>

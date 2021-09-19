@@ -10,7 +10,7 @@ import {
 import { GiMedicinePills } from "react-icons/gi";
 import { FiHelpCircle } from "react-icons/fi";
 
-const Volume = () => {
+const Volume = ({ volume, setVolume }) => {
     return (
         <FormControl>
             <Box display="flex" alignItems="center" mt={4}>
@@ -36,7 +36,11 @@ const Volume = () => {
                     alignItems="center"
                 >
                     <InputGroup>
-                        <Select placeholder="--">
+                        <Select
+                            value={volume}
+                            onChange={e => setVolume(e.target.value)}
+                            placeholder="--"
+                        >
                             <option value={15}>15 mL (0.5 oz)</option>
                             <option value={30}>30 mL (1 oz)</option>
                             <option value={50}>50 mL (1.7 oz)</option>
